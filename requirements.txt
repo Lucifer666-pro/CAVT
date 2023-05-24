@@ -1,6 +1,8 @@
 Flask==2.0.1
 
 gtts==2.2.3
+waitress==2.1.0
+
 
 googletrans==4.0.0-rc1
 
