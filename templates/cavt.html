@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>cavt</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+      <!-- Responsive-->
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}">
+      <!-- fevicon -->
+      <link rel="icon" href="../static/fevicon.png" type="image/gif" />
+      <!-- font css -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/jquery.mCustomScrollbar.min.css') }}">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   </head>
+   <body>
+      <div class="header_section header_bg">
+         <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <a class="navbar-brand"href="index.html"><img src="../static/images/CAVT-logo.png"  width="193" height="33"></a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="{{url_for('index')}}">Home</a>
+                     </li>
+                     
+                     <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('cavt')}}">CAVT</a>
+                     </li>
+                  
+                     <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('example')}}">Example</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('about')}}">About</a>
+                     </li>
+                     
+                  </ul>
+                  
+               </div>
+            </nav>
+         </div>
+      </div>
+      <!-- header section end -->
+      <!--  section start -->
+      
+         <div class="container">
+            <div class="row">
+               <h1 class="coffee_taital">Computer Assisted Video Translator</h1>
+               <div class="bulit_icon"><img src="../static/images/bulit-icon.png"></div>
+            </div>
+         </div>
+         <p class="description">A simple application that translates video upto 10 languages English, Hindi, Tamil, Telugu, Spanish, Portuguese, Malayalam, Japanese, French, and German. Upload your own file or paste youtube link to load them. Wait for one minute for processing.</p>
+    <div class="lsg">
+
+    
+      <form action="/translate" method="post" enctype="multipart/form-data">
+
+         <table>
+            <tr>
+               <td>  <label for="file">Upload Video:</label></td>
+               <td> <input type="file" id="file" name="file" accept="video/mp4"></td>
+            </tr>
+               
+            <tr>
+               <td></td>
+               <td>or</td>
+            </tr>
+
+            <tr>
+               <td>        <label for="youtube_link" size="40">Paste YouTube Link here:</label></td>
+               <td> <input type="text" id="youtube_link" name="youtube_link"></td>
+            </tr>
+
+            <tr>
+               <td><label for="initial_language">Initial Language:</label></td>
+               <td>   <select name="initial_language" id="initial_language">
+           <option value="English">English</option>
+           <option value="Italian">Italian</option>
+           <option value="Spanish">Spanish</option>
+           <option value="Russian">Russian</option>
+           <option value="German">German</option>
+           <option value="Japanese">Japanese</option>
+           <option value="Malayalam">Malayalam</option>
+         </select></td>
+            </tr>
+
+            <tr>
+               <td>   <label for="final_language">Final Language:</label></td>
+               <td><select name="final_language" id="final_language">
+           <option value="English">English</option>
+           <option value="Italian">Italian</option>
+           <option value="Spanish">Spanish</option>
+           <option value="Russian">Russian</option>
+           <option value="German">German</option>
+           <option value="Japanese">Japanese</option>
+           <option value="Malayalam">Malayalam</option>
+         </select></td>
+            </tr>
+         </table>
+       
+         <p id="error-message" class="error-message"></p>
+   
+         <input type="submit" value="Translate">
+         
+         <div id="loading-container" aria-busy="false" aria-describedby="progress-bar">
+           <!-- content is for this region is loading -->
+         </div>
+         
+         <progress id="progress-bar" aria-label="Content loading…" style="display: none;" ></progress>
+         
+       </form>
+    </div>
+      
+     
+         <div class="instructions">
+           <p>All you need to do is upload the MP4 file and click Submit. Wait for the video to be processed. You can then click Play/Pause to listen to the translated video. The video will be saved in MP4 format.</p>
+         </div>
+     
+         <div id="video-container" style="display: none;">
+           <video id="translated-video" controls></video>
+         </div>
+      <!-- section end -->
+     
+      <!-- copyright section start -->
+      <div class="copyright_section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6 col-sm-12">
+                  <p class="copyright_text">2023 All Rights Reserved. </p>
+               </div>
+               <div class="col-lg-6 col-sm-12">
+                  
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- copyright section end -->
+
+
+      <!-- Javascript files-->
+
+      <script src="../static/js/cavt.js"></script>
+      <script src="../static/js/jquery.min.js"></script>
+      <script src="../static/js/popper.min.js"></script>
+      <script src="../static/js/bootstrap.bundle.min.js"></script>
+      <script src="../static/js/jquery-3.0.0.min.js"></script>
+      <script src="../static/js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="../static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="../static/js/custom.js"></script>
+   </body>
+</html>

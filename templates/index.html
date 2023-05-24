@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>CAVT</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+      <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+      <!-- Responsive-->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+      <!-- fevicon -->
+      <!-- fevicon -->
+      <link rel="icon" href="../static/images/fevicon.png" type="image/gif" />
+      <!-- font css -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/jquery.mCustomScrollbar.min.css') }}">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   </head>
+   <body>
+      <div class="header_section">
+         <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <a class="navbar-brand"href="{{url_for('index')}}"><img style src="../static/images/CAVT-logo.png" width="193" height="33">
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="{{url_for('index')}}">Home</a>
+                     </li>
+                     
+                     <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('cavt')}}">CAVT</a>
+                     </li>
+                  
+                     <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('example')}}">Example</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('about')}}">About</a>
+                     </li>
+                     
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    
+                  </form>
+               </div>
+            </nav>
+         </div>
+         <!-- banner section start --> 
+         <div class="banner_section layout_padding">
+            <div class="container">
+               <div id="banner_slider" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                     <div class="carousel-item active">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="banner_img">
+                              </div>
+
+                           </div>
+                           <div class="col-md-6">
+                              <div class="banner_taital_main">
+                                 <h1 class="banner_taital">CAVT</h1>
+                                 <h5 class="tasty_text">Real-time translation</h5>
+                                 <p class="banner_text">cross-cultural communication </p>
+                                 <div class="btn_main">
+                                    <div class="about_bt"><a href="{{url_for('cavt')}}">Get started</a></div>
+                                    <div class="callnow_bt active"><a href="{{url_for('about')}}">About</a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                     <div class="row">
+                           <div class="col-md-6">
+                              <div class="banner_img">
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="banner_taital_main">
+                                 <h1 class="banner_taital">CAVT</h1>
+                                 <h5 class="tasty_text">User-friendly</h5>
+                                 <p class="banner_text">make your videos more accessible to all </p>
+                                 <div class="btn_main">             
+                                    <div class="about_bt"><a href="{{url_for('cavt')}}">Get started</a></div>
+                                    <div class="callnow_bt active"><a href="{{url_for('example')}}">Examples</a></div>
+                                 </div>
+                              </div>   
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="banner_img">
+                              </div>
+                              </div>
+                           <div class="col-md-6">
+                              <div class="banner_taital_main">
+                                 <h1 class="banner_taital">CAVT</h1>
+                                 <h5 class="tasty_text">Translate to 10 languages</h5>
+                                 <p class="banner_text">automaticaly translate your video in seconds</p>
+                                  <div class="btn_main">
+                                    <div class="about_bt"><a href="{{url_for('cavt')}}">Get started</a></div>
+                                    
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#banner_slider" role="button" data-slide="prev">
+                  <i class="fa fa-arrow-left"></i>
+                  </a>
+                  <a class="carousel-control-next" href="#banner_slider" role="button" data-slide="next">
+                  <i class="fa fa-arrow-right"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+         <!-- banner section end -->
+      </div>
+      <!-- header section end -->
+      <!--about section start-->
+      <div class="client_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <h1 class="about_taital">About CAVT</h1>
+                  <div class="bulit_icon"><img src="../static/images/bulit-icon.png"></div>
+               </div>
+            </div>
+            <div class="about_taital_box">
+            <p class=" about_right">Welcome to our computer-assisted video translator! We are dedicated to breaking down language barriers and enabling effective communication across different cultures and languages. 
+               Our innovative system utilizes cutting-edge technologies to seamlessly translate videos from one language to another.<br>
+             <br>
+             Whether you are sharing educational content, corporate videos, or personal stories, our computer-assisted video translator enables you to connect with diverse audiences around the world. Break down language barriers, foster cross-cultural understanding, and make a global impact with our video translation solution.<br>
+  
+               Our platform supports a wide range of languages English, Hindi, Tamil, Telugu, Spanish, Portuguese, Malayalam, Japanese, French, and German ; allowing you to translate your videos into multiple target languages simultaneously. Whether you are a content creator, educator, business professional, or individual, our video translator empowers you to reach a broader audience and expand your global impact.
+            </p>
+           
+               
+               
+            </div>
+
+            <div class="about_right_box">
+               <h1 class="about_taital_1">How to translate</h1>
+               <div class=" about_text">
+                  <ol>
+                     <li>
+                       <strong>Upload/paste youtube link of video:</strong> Click on the "Upload Video" button to select the video file you want to translate. 
+                     </li>
+                     <li>
+                       <strong>Select source & target language:</strong> Choose the language which you want to translate your video. Our system supports up to 10 different languages for translation.
+                     </li>
+                     <li>
+                       <strong>Initiate translation:</strong> Click on the "Translate" button to start the translation process. Our system will transcribe the audio content of the video and then translate it into the selected target language.
+                    </li>
+                     <li>
+                       <strong>Download or share:</strong> Once the translated video is generated, you can download it to your device or share it directly from our platform with others.
+                     </li>
+                     <li>
+                        <div class="btn_main">             
+                           <div class="about_bt"><a href="{{url_for('cavt')}}">Get started</a>
+                           </div>
+                         </div>
+                     </li>
+                   </ol>
+                   
+                  </div>
+               
+            </div>
+          
+               
+                
+            
+         </div>
+      </div>
+      <!--about section end-->
+
+
+
+      
+      <!-- client section start -->
+      <div class="client_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <h1 class="about_taital">Examples</h1>
+                  <div class="bulit_icon">
+              <h1>YouTube Video List</h1>
+ 
+  <div class="video-row">
+    <img class="video-thumbnail" src="http://img.youtube.com/vi/v86oobzyFBw/default.jpg" alt="Video Thumbnail">
+    <div class="video-details">
+      <p class="video-title">English video</p>
+      <p class="video-description">BE INSPIRED | Wings Of Fire ( WOF) | APJ Abdul Kalam | 1 Minute Motivation</p>
+    </div>
+    <button class="copy-button" onclick="copyLink('v86oobzyFBw')">Copy Link</button>
+  </div>
+<div class="video-row">
+    <img class="video-thumbnail" src="http://img.youtube.com/vi/iVo3LfZti5w/default.jpg" alt="Video Thumbnail">
+    <div class="video-details">
+      <p class="video-title">Hindi video</p>
+      <p class="video-description">1 minute motivational video | motivational speech-In hindi</p>
+    </div>
+    <button class="copy-button" onclick="copyLink('iVo3LfZti5w')">Copy Link</button>
+  </div>
+<div class="video-row">
+    <img class="video-thumbnail" src="http://img.youtube.com/vi/GqlqNx2Eszw/default.jpg" alt="Video Thumbnail">
+    <div class="video-details">
+      <p class="video-title">Tamil video</p>
+      <p class="video-description">DON'T WASTE TIME! | One-minute Motivational Video | Tamil</p>
+    </div>
+    <button class="copy-button" onclick="copyLink('GqlqNx2Eszw')">Copy Link</button>
+  </div>
+<div class="video-row">
+    <img class="video-thumbnail" src="http://img.youtube.com/vi/RSSTfrRJo9M/default.jpg" alt="Video Thumbnail">
+    <div class="video-details">
+      <p class="video-title">English video</p>
+      <p class="video-description"> STEVE JOBS MOTIVATION - Apple Success Story | 1 Minute Motivation</p>
+    </div>
+    <button class="copy-button" onclick="copyLink('RSSTfrRJo9M')">Copy Link</button>
+  </div>
+  
+		</div>
+               </div>
+            </div>
+           
+                  
+            </div>
+         </div>
+      </div>
+      <!-- blog section end -->
+     
+      <!-- copyright section start -->
+      <div class="copyright_section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6 col-sm-12">
+                  <p class="copyright_text">2023 All Rights Reserved. </a></p>
+               </div>
+               <div class="col-lg-6 col-sm-12">
+                 
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script>
+         function copyLink(videoId) {
+      var videoLink = "https://www.youtube.com/watch?v=" + videoId;
+      navigator.clipboard.writeText(videoLink).then(function() {
+        alert("Video link copied!");
+      }, function() {
+        alert("Failed to copy video link.");
+      });
+    }
+      </script>
+      <script src="{{ url_for('static', filename='./js/cavt.js') }}"></script>
+      <script src="{{ url_for('static', filename='../static/js/jquery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='../static/js/popper.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='../static/js/bootstrap.bundle.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='../static/js/jquery-3.0.0.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='../static/js/plugin.js') }}"></script>
+      <!-- sidebar -->
+      <script src="{{ url_for('static', filename='../static/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='../static/js/custom.js') }}"></script>
+   </body>
+</html>
