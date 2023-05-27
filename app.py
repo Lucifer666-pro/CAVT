@@ -5,9 +5,7 @@ import speech_recognition as sr
 from googletrans import Translator
 from moviepy.editor import *
 import nltk
-
 from pytube import YouTube
-
 
 app = Flask(__name__)
 
@@ -62,21 +60,10 @@ def translate():
     # Return the translated video
     return send_file(translated_video_path, as_attachment=True)
 
-import boto3
-from io import BytesIO
-access_key_id = 'AKIA222Y5TAL4LGHOF5G'
-secret_access_key = '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'
-region='us-east-1'
-
-def aws_translate(text, source_lang_code, target_lang_code):
-    client = boto3.client('translate', aws_access_key_id=access_key_id, aws_secret_access_key=secret_access_key, region_name=region)
-    response = client.translate_text(
-        Text=text,
-        SourceLanguageCode=source_lang_code,
-        TargetLanguageCode=target_lang_code
-    )
-    return response['TranslatedText']
-
+def translate_text(text, source_lang, target_lang):
+    translator = Translator(service_urls=['translate.google.com'])
+    translation = translator.translate(text, src=source_lang, dest=target_lang)
+    return translation.text
 
 def video_to_translate(video_path, initial_language, final_language):
     videoclip = VideoFileClip(video_path)
@@ -96,7 +83,7 @@ def video_to_translate(video_path, initial_language, final_language):
 
     translated_sentences = []
     for sentence in sentences:
-        trans = aws_translate(sentence, lang_in, lang_out)
+        trans = translate_text(sentence, lang_in, lang_out)
         translated_sentences.append(trans)
 
     translated_text = ' '.join(translated_sentences)
@@ -113,15 +100,20 @@ def video_to_translate(video_path, initial_language, final_language):
     videoclip.write_videofile(translated_video_path)
 
     return translated_video_path
+
 def get_language_code(language):
     language_codes = {
         "English": "en",
-        "Italian": "it",
-        "Spanish": "es",
-        "Russian": "ru",
-        "German": "de",
-        "Japanese": "ja",
-        "Malayalam": "ml"
+	"Hindi": "hi",
+	"Malayalam": "ml",
+	"Tamil": "ta",
+	"Telugu": "te",
+	"Spanish": "es",
+	"Portuguese": "pt",	
+	"Japanese": "ja",
+	"French": "fr",
+	"German": "de",
+
     }
     return language_codes[language]
 
@@ -131,4 +123,3 @@ if __name__ == '__main__':
     
     from waitress import serve
     serve(app, host='0.0.0.0', port=8000)
-

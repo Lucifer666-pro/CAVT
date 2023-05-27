@@ -22,7 +22,7 @@
       <!-- Responsive-->
       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}">
       <!-- fevicon -->
-      <link rel="icon" href="../static/fevicon.png" type="image/gif" />
+      <link rel="icon" href="../static/images/fevicon.png"  width="193" height="33" type="image/gif" />
       <!-- font css -->
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
       <!-- Scrollbar Custom CSS -->
@@ -132,6 +132,16 @@
       </div>
       <!-- copyright section end -->
       <!-- Javascript files-->
+	<script>
+         function copyLink(videoId) {
+      var videoLink = "https://www.youtube.com/watch?v=" + videoId;
+      navigator.clipboard.writeText(videoLink).then(function() {
+        alert("Video link copied!");
+      }, function() {
+        alert("Failed to copy video link.");
+      });
+    }
+      </script>
       <script src="../static/js/jquery.min.js"></script>
       <script src="../static/js/popper.min.js"></script>
       <script src="../static/js/bootstrap.bundle.min.js"></script>
